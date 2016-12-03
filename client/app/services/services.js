@@ -5,11 +5,11 @@ angular.module('shortly.services', [])
   var getAll = function (link) {
     return $http({
       method: 'GET',
-      url: '/api/links',
+      url: '/api/links', //server
       data: link
     })
     .then(function (resp) {
-      console.log('THE FUCKING RESPONSE ------------', resp.data);
+      // console.log('Links GET response ---------', resp.data);
       return resp.data;
     });
   };
@@ -21,17 +21,29 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function (resp) {
-      console.log('THE FUCKING GET RESPONSE --------', resp.data);
+      // console.log('Links POST response ---------', resp.status, resp.data);
       return {status: resp.status, data: resp.data};
     });
   };
 
-  return {
-    getAll: getAll,
-    addOne: addOne
+  var addLink = function (link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function (resp) {
+      // console.log('Links POST response ---------', resp.status, resp.data);
+      return {status: resp.status, data: resp.data};
+    });
   };
 
 
+  return {
+    getAll: getAll,
+    addOne: addOne,
+    addLink: addLink
+  };
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
