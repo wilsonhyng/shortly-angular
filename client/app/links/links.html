@@ -10,8 +10,17 @@
 
 <div id='links'>
   <h1>LINKS</h1>
-  <form name="getAll" ng-submit='getAll()'>
-    <button>Get all Links</button>
-  </form>
+
+  <button ng-click='getAll()'>Get all Links</button>
+
   <a href="#/shorten"><strong>GO TO SHORTEN</strong></a>
+
+
+  <pre>
+    <ul ng-repeat="link in data.links">
+      <li>{{link.url}}</li>
+    </ul>
+
+  </pre>
+
 </div>
