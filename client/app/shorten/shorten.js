@@ -7,14 +7,10 @@ angular.module('shortly.shorten', [])
   $scope.data = {}; 
 
   $scope.addLink = function() {
-    Links.addLink($scope.link)
+    Links.addLink($scope.link) //what does this line do
     .then(function (respObj) {
       console.log(respObj);
-      // do something
-      $scope.data= respObj.data.baseUrl + '/' + respObj.data.code;
-
-
-
+      $scope.data = respObj.data.url+ ': ' + respObj.data.baseUrl + '/' + respObj.data.code;
     })
     .catch(function (error) {
       console.error(error);
