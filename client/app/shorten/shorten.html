@@ -1,9 +1,19 @@
-
 <div id='shorten'>
   <h1>SHORTEN</h1>
   <form name="signinForm" ng-submit='addLink()'>
-    <input type='text'ng-model='link.url'>
+    <input type='text' ng-model='link.url' >
     <button>SHORTEN LINK</button>
   </form>
   <a href="#/links"><strong>LINKS</strong></a>
+
+
+  <pre>
+<!--     <ul ng-repeat="link in data.links">
+ -->      
+    <ul>
+      <li>{{data}}</li>
+    </ul>
+
+  </pre>
+
 </div>
