@@ -15,6 +15,14 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
+    .when('/getAll', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinkController'
+    })
+    .when('/addOne', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinkController'
+    });
     // Your code here
 
     // We add our $httpInterceptor into the array
