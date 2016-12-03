@@ -8,6 +8,7 @@ angular.module('shortly.links', [])
     Links.getAll($scope.link) //data binding
       .then(function (link) {
         // do something
+        $scope.data.links = link;
       })
       .catch(function (error) {
         console.error(error);
@@ -23,4 +24,6 @@ angular.module('shortly.links', [])
         console.error(error);
       });
   };
+  $scope.getAll();
+
 });

@@ -5,11 +5,11 @@ angular.module('shortly.services', [])
   var getAll = function (link) {
     return $http({
       method: 'GET',
-      url: '/api/links',
+      url: '/api/links', //server
       data: link
     })
     .then(function (resp) {
-      console.log('Links GET response ---------', resp.data);
+      // console.log('Links GET response ---------', resp.data);
       return resp.data;
     });
   };
@@ -21,14 +21,28 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function (resp) {
-      console.log('Links POST response ---------', resp.status, resp.data);
+      // console.log('Links POST response ---------', resp.status, resp.data);
       return {status: resp.status, data: resp.data};
     });
   };
 
+  var addLink = function (link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function (resp) {
+      // console.log('Links POST response ---------', resp.status, resp.data);
+      return {status: resp.status, data: resp.data};
+    });
+  };
+
+
   return {
     getAll: getAll,
-    addOne: addOne
+    addOne: addOne,
+    addLink: addLink
   };
 
 })
