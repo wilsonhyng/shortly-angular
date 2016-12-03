@@ -1,3 +1,19 @@
-<div id='container'>
-  <!-- Your html here -->
+<!-- <div ng-controller'links' id='container'>
+  <div class='navigation'>
+  <ul>
+    <li><a href='#' class='index'>All Links</a></li>
+    <li><a href='#' class='create'>Shorten</a></li>
+  </ul>
+    <a href='/logout' class='logout'>Logout</a>
+  </div>
+</div> -->
+
+<div id='signin'>
+  <h1>signin</h1>
+  <form name="signinForm" ng-submit='signin()'>
+    <input type='text'ng-model='user.username'>
+    <input type="password" ng-model='user.password'>
+    <button>signin</button>
+  </form>
+  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>
