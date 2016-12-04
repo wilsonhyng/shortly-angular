@@ -11,6 +11,7 @@ angular.module('shortly.shorten', [])
     .then(function (respObj) {
       console.log(respObj);
       $scope.data = respObj.data.url+ ': ' + respObj.data.baseUrl + '/' + respObj.data.code;
+      // $location.path('#/links')
     })
     .catch(function (error) {
       console.error(error);
